@@ -1,51 +1,51 @@
 #include "lists.h"
 
 /**
- * insert_node - Ins a node
- * @head: linked list head
- * @number: addition to the list
- * Return: Ptr to node or null
+ * insert_node - Inserts node
+ * @head: Head of the linked list
+ * @number: number to be added to the list
+ * Return: Pointer to a node or null if it fails
  */
 
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *now = *ini;
-	listint_t *fut = NULL;
+	listint_t *current = *head;
+	listint_t *new_node = NULL;
 	listint_t *temp = NULL;
 
 	(void)number;
 
-	fut = malloc(sizeof(listint_t));
-	if (fut == NULL)
+	new_node = malloc(sizeof(listint_t));
+	if (new_node == NULL)
 		return (NULL);
 
-	if (ini == NULL || *ini == NULL)
+	if (head == NULL || *head == NULL)
 	{
-		fut->n = number;
-		fut->next = NULL;
-		*ini = fut;
-		return (fut);
+		new_node->n = number;
+		new_node->next = NULL;
+		*head = new_node;
+		return (new_node);
 	}
 
-	if (now->n > number)
+	if (current->n > number)
 	{
-		fut->n = number;
-		fut->next = now;
-		*ini = fut;
-		return (*ini);
+		new_node->n = number;
+		new_node->next = current;
+		*head = new_node;
+		return (*head);
 	}
 
 	/* Traverse the list to find where current->n > number*/
-	while (now->n < number && now->next != NULL)
+	while (current->n < number && current->next != NULL)
 	{
-		if (now->next->n >= number)
+		if (current->next->n >= number)
 			break;
-		now = now->next;
+		current = current->next;
 	}
-	fut->n = number;
-	temp = now->next;
-	now->next = fut;
-	fut->next = temp;
+	new_node->n = number;
+	temp = current->next;
+	current->next = new_node;
+	new_node->next = temp;
 
 	return (NULL);
 }
