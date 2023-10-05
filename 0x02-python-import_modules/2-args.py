@@ -8,4 +8,3 @@ else:
     print(f"{total - 1} {'argument' if total == 2 else 'arguments'}:")
     for i, arg in enumerate(sys.argv[1:], 1):
         print(f"{i}: {arg}")
-
