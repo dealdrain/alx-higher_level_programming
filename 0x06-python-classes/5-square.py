@@ -2,11 +2,6 @@
 """
 This is the "Square"  module.
 
-This module provides a simple Square class with initialize size.
-Defaults size to 0. Raise error on invalid size inputs.
-Methods Getter and Setter properties for size.
-Method area returns size of area of the square.
-Method my_print prints the square using "#".
 """
 
 
