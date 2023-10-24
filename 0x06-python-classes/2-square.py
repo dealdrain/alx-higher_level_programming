@@ -6,6 +6,7 @@ This is a "Square"  module.
 
 
 class Square:
+    """A class that defines a square by size."""
     def __init__(self, size=0):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
