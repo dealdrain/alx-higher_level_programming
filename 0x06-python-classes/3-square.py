@@ -13,22 +13,4 @@ class Square:
         self.__size = size
 
     def area(self):
-        return self.__size * self.__size
-
-
-if __name__ == '__main__':
-    my_square_1 = Square(3)
-    print("Area:", my_square_1.area())
-
-    try:
-        print(my_square_1.size)
-    except AttributeError as e:
-        print(e)
-
-    try:
-        print(my_square_1.__size)
-    except AttributeError as e:
-        print(e)
-
-    my_square_2 = Square(5)
-    print("Area:", my_square_2.area())
+        return self.__size ** 2
