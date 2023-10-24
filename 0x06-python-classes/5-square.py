@@ -6,9 +6,7 @@ This is the "Square"  module.
 
 
 class Square:
-    """A class that defines a square by size, which defaults 0.
-    Square can also get area, and print square using '#'.
-    """
+    """A class that  """
     def __init__(self, size=0):
         self.size = size
 
