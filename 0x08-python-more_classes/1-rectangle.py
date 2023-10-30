@@ -1,35 +1,35 @@
 #!/usr/bin/python3
 """
-"Rectangle"  module.
-
+Rectangle module.
 """
 
 
 class Rectangle:
+    """A Rectangle class with attributes  width and height"""
     def __init__(self, width=0, height=0):
-        self._set_width(width)
-        self._set_height(height)
+        self.width = width
+        self.height = height
 
-    def _set_width(self, width):
-        if not isinstance(width, int):
+    @property
+    def width(self):
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        if type(value) is not int:
             raise TypeError('width must be an integer')
-        if width < 0:
+        if value < 0:
             raise ValueError('width must be >= 0')
-        self._width = width
+        self.__width = value
 
-    def _get_width(self):
-        return self._width
+    @property
+    def height(self):
+        return self.__height
 
-    width = property(_get_width, _set_width)
-
-    def _set_height(self, height):
-        if not isinstance(height, int):
+    @height.setter
+    def height(self, value):
+        if type(value) is not int:
             raise TypeError('height must be an integer')
-        if height < 0:
+        if value < 0:
             raise ValueError('height must be >= 0')
-        self._height = height
-
-    def _get_height(self):
-        return self._height
-
-    height = property(_get_height, _set_height)
+        self.__height = value
