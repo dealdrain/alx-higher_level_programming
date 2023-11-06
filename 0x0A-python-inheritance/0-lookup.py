@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
-"""Function that looks up the methods of an object"""
+"""Func looking up methods of an obj"""
 
 
 def lookup(obj):
-    """Checks what methods are available in an object
-    Arguments: obj - Object to be checked
-    Return: A list
+    """Check availabble  methos
+    Arguments: obj to be checked
+    Return:  list
     """
     return dir(obj)
