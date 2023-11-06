@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 
-"""A class def for MyList"""
+"""class def for the List"""
 
 
 class MyList(list):
 
+    """List inherits from the class"""
+
     def print_sorted(self):
+        """Sort the elements"""
         list_sorted = sorted(self)
         print(list_sorted)
 
