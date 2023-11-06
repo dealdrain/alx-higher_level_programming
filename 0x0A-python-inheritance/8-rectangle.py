@@ -1,38 +1,37 @@
 #!/usr/bin/python3
+"""Base Geometry class"""
 
 
-BaseGeometry = __import__("7-base_geometry").BaseGeometry
+class BaseGeometry:
+
+    """BaseGeo class """
+
+    def area(self):
+        """Area function """
+
+        raise Exception("area() is not implemented")
+
+    def integer_validator(self, name, value):
+        """integer_validator function
+        validates the value
+        """
+
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
 
 
 class Rectangle(BaseGeometry):
-    """Rectangle class"""
+
+    """Class Rec not deployed"""
 
     def __init__(self, width, height):
-        """__init__ method
-        Args:
-            width (int): width intc > 0
-            height (int): height int > 0
-        """
-        super().integer_validator("width", width)
-        super().integer_validator("height", height)
+
+        """Inst with width and height"""
+
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
-
-
-if __name__ == '__main__':
-    r = Rectangle(3, 5)
-
-    print(r)
-    print(dir(r))
-
-    try:
-        print("Rectangle: {} - {}".format(r.width, r.height))
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    try:
-        r2 = Rectangle(4, True)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    print(issubclass(Rectangle, BaseGeometry))
