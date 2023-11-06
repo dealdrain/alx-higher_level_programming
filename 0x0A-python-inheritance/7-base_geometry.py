@@ -1,22 +1,24 @@
 #!/usr/bin/python3
-"""Create a Geometry Class"""
+"""Defines a base geo class BaseGeometry."""
 
 
-class BaseGeometry():
-    """A Base Geo class"""
+class BaseGeometry:
+    """Rep base."""
 
     def area(self):
-        """Not deployed"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Validate int"""
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
+        """Validate a par wiht int.
+
+        Args:
+            name (str): Par name.
+            value (int): Par lookupe.
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is <= 0.
+        """
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
+            raise ValueError("{} must be greater than 0".format(name))
