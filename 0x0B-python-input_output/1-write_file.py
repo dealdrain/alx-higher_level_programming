@@ -1,16 +1,12 @@
 #!/usr/bin/python3
-"""Defines a text file with line-counting function."""
+
+"""Define a text file with a line-counting func."""
 
 
-def read_lines(filename="", nb_lines=0):
-    """Returns the number of lines in a text file."""
-
-
-with open(filename, encoding="utf-8") as fd:
-    if (nb_lines == 0):
-        print(fd.read(), end="")
-    else:
-        for line in fd:
-            if (nb_lines > 0):
-                print(line, end="")
-                nb_lines -= 1
+def number_of_lines(filename=""):
+    """Returns num of lines."""
+    lines = 0
+    with open(filename) as f:
+        for line in f:
+            lines += 1
+    return lines
