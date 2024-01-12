@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 Listing Cities objects from db
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
