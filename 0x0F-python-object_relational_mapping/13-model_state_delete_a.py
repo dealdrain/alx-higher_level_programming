@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-deleting all State objects with a name containing the letter a from the database
+deleting all State objects with a name containing the letter a
+from the database
 """
 
 from sys import argv
