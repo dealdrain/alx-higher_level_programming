@@ -5,10 +5,11 @@ finding a peak
 
 
 def find_peak(list_of_integers):
-    if not list_of_integers:
-        return
-    peak = list_of_integers[0]
-    for num in list_of_integers:
-        if peak < num:
-            peak = num
-    return peak
+    """
+    Return the peak in a list of integers
+    """
+    if len(list_of_integers) > 0:
+        list_of_integers.sort()
+        return list_of_integers[-1]
+    else:
+        return None
